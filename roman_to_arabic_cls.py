@@ -1,8 +1,5 @@
 import collections
 
-
-
-
 class ArabicToRoman(object):
     def arabic_to_roman(self, int_number):
         numerals_ordered_dict = collections.OrderedDict()
@@ -21,11 +18,10 @@ class ArabicToRoman(object):
         numerals_ordered_dict[1] = 'I'
 
         roman_numeral = ""
-
         for key_arabic, value_roman in numerals_ordered_dict.items():
-            while int_number <= key_arabic:
+            while int_number >= key_arabic:
                 roman_numeral += value_roman
                 int_number -= key_arabic
-            return roman_numeral
+        return roman_numeral
 
 
