@@ -2,8 +2,10 @@ import collections
 
 class ArabicToRoman(object):
     def arabic_to_roman(self, int_number):
+        if not isinstance(int_number,int):
+            return "Invalid Entry"
 
-        if int_number >0 and int_number < 4000:
+        if int_number > 0 and int_number < 4000:
             numerals_ordered_dict = collections.OrderedDict()
             numerals_ordered_dict[1000] = 'M'
             numerals_ordered_dict[900] = 'CM'
@@ -25,6 +27,5 @@ class ArabicToRoman(object):
                     roman_numeral += value_roman
                     int_number -= key_arabic
             return roman_numeral
-
-
-
+        else:
+            return "Invalid Entry"
